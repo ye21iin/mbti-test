@@ -21,7 +21,11 @@
 }
 
 .button-blue {
-  @apply mt-4 bg-blue-500 shadow-lg shadow-blue-500/50 text-white hover:bg-blue-600 py-3 px-7 rounded;
+  @apply rounded-full bg-blue-500 px-7 py-3 mt-4 text-lg leading-8 font-semibold text-white shadow-lg shadow-blue-500/50 hover:bg-blue-600;
+}
+
+.button-sky {
+  @apply rounded bg-sky-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700;
 }
 
 .modal-overlay {
