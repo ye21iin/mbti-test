@@ -6,7 +6,17 @@ const Home = () => {
     <>
       <Layout />
       <div className="centered-container">
-        <h1 className="h1">무료 성격 테스트</h1>
+        <h1 className="h1">
+          무료&nbsp;
+          <span className="relative">
+            <span
+              className="absolute -inset-1 block -skew-y-3 bg-slate-800"
+              aria-hidden="true"
+            ></span>
+            <span className="relative text-white">성격</span>
+          </span>
+          &nbsp;테스트
+        </h1>
         <p className="p mt-2 mb-10">
           자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
         </p>
