@@ -18,7 +18,7 @@ const Login = ({ setUser }) => {
         <AuthForm mode="login" onSubmit={handleLogin} />
         <div>
           <p className="mt-7">
-            계정이 없으신가요?{" "}
+            계정이 없으신가요?&nbsp;
             <Link to="/signup" className="text-primary font-semibold">
               회원가입
             </Link>
