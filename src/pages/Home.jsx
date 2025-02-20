@@ -7,7 +7,7 @@ const Home = () => {
       <Layout />
       <div className="centered-container">
         <h1 className="h1">무료 성격 테스트</h1>
-        <p className="p mt-4 mb-8">
+        <p className="p mt-2 mb-10">
           자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

@@ -15,7 +15,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="centered-container bg-slate-300">
+    <div className="centered-container bg-bgColor">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         <h1 className="h1">회원가입</h1>
         <AuthForm mode="signup" onSubmit={handleSignup} />

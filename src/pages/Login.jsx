@@ -12,7 +12,7 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div className="centered-container bg-slate-300">
+    <div className="centered-container bg-bgColor">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         <h1 className="h1 w-full">로그인</h1>
         <AuthForm mode="login" onSubmit={handleLogin} />
