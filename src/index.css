@@ -28,6 +28,10 @@
   @apply rounded bg-sky-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700;
 }
 
+.button-slate {
+  @apply rounded bg-slate-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700;
+}
+
 .button-rounded {
   @apply rounded-full bg-sky-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700;
 }
@@ -37,7 +41,7 @@
 }
 
 .modal-content {
-  @apply bg-white p-5 rounded-lg shadow-md min-w-[300px] text-center;
+  @apply bg-white p-6 rounded-lg shadow-md w-[450px] max-w-[600px] text-center;
 }
 
 /* reset CSS */
