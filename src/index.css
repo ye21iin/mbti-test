@@ -19,7 +19,7 @@
 }
 
 .input {
-  @apply w-full p-4 border border-gray-300 rounded-lg;
+  @apply w-full p-4 border border-gray-300 rounded-lg mb-2;
 }
 
 /* reset CSS */

@@ -1,10 +1,67 @@
-const AuthForm = () => {
+import { useState } from "react";
+
+const AuthForm = ({ mode, onSubmit }) => {
+  const [formData, setFormData] = useState({
+    id: "",
+    password: "",
+    nickname: "",
+  });
+
+  //   const handleChange = (e) => {
+  //     const newUser = {};
+  //     setFormData();
+  //   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
+
   return (
-    <form className="flex flex-col">
-      <input type="text" placeholder="아이디" className="input mb-2" />
-      <input type="password" placeholder="비밀번호" className="input" />
-      <button className="mt-4 bg-blue-500 shadow-lg shadow-blue-500/50 text-white hover:bg-blue-600 py-3 px-7 rounded">
-        로그인
+    <form className="flex flex-col" onSubmit={(e) => handleSubmit(e)}>
+      <input
+        className="input"
+        type="text"
+        name="id"
+        value={formData.id}
+        onChange={(e) => {
+          const { name, value } = e.target;
+          setFormData({ ...formData, [name]: value });
+        }}
+        placeholder="아이디"
+        required
+      />
+      <input
+        className="input"
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={(e) => {
+          const { name, value } = e.target;
+          setFormData({ ...formData, [name]: value });
+        }}
+        placeholder="비밀번호"
+        required
+      />
+      {mode === "signup" && (
+        <input
+          type="text"
+          name="nickname"
+          value={formData.nickname}
+          onChange={(e) => {
+            const { name, value } = e.target;
+            setFormData({ ...formData, [name]: value });
+          }}
+          placeholder="닉네임"
+          required
+          className="w-full p-4 border border-gray-300 rounded-lg"
+        />
+      )}
+      <button
+        type="submit"
+        className="mt-4 bg-blue-500 shadow-lg shadow-blue-500/50 text-white hover:bg-blue-600 py-3 px-7 rounded"
+      >
+        {mode === "login" ? "로그인" : "회원가입"}
       </button>
     </form>
   );
