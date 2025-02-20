@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ProfileModal from "./ProfileModal";
 
 const Layout = () => {
   return (
@@ -7,6 +8,7 @@ const Layout = () => {
         <Link to="/" className="text-sky-700 text-xl font-bold">
           홈
         </Link>
+        <ProfileModal />
         <Link to="/login">
           <button className="button-sky">로그인</button>
         </Link>
