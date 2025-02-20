@@ -13,6 +13,7 @@ const useAuthStore = create((set) => ({
   onLogout: () => {
     localStorage.removeItem("accessToken"); // 로그아웃 시 token 삭제
     set({ isAuthenticated: false }); // 인증 상태 변경
+    alert("로그아웃되었습니다.");
   },
 }));
 
