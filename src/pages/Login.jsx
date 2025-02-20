@@ -1,14 +1,21 @@
 // import { useEffect } from "react";
 import AuthForm from "../components/AuthForm";
-// import { login, getUserProfile } from "../api/auth";
-import { Link } from "react-router-dom";
+import { login } from "../api/auth";
+import { Link, useNavigate } from "react-router-dom";
+import useAuthStore from "../zustand/authStore";
 
-const Login = ({ setUser }) => {
+const Login = () => {
+  const navigate = useNavigate();
+  const { onLogin } = useAuthStore((state) => state);
   const handleLogin = async (formData) => {
-    // try {
-    // } catch (error) {
-    //   alert("로그인에 실패했습니다. 다시 시도해주세요.");
-    // }
+    try {
+      const { accessToken } = await login(formData);
+      onLogin(accessToken);
+      navigate("/");
+    } catch (error) {
+      alert("로그인에 실패했습니다. 다시 시도해주세요.");
+      throw new Error(error);
+    }
   };
 
   return (
