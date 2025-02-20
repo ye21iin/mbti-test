@@ -4,7 +4,7 @@ import useAuthStore from "../zustand/authStore";
 
 const Layout = () => {
   const { isAuthenticated, onLogout } = useAuthStore((state) => state);
-  console.log(isAuthenticated);
+  console.log("현재 로그인 상태", isAuthenticated);
   return (
     <>
       <div className="flex justify-between items-center p-3 pl-10 bg-slate-100 shadow-md text-xl font-semibold">

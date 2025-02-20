@@ -1,7 +1,19 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    const token = localStorage.getItem("accessToken");
+    if (!token) {
+      alert("로그인이 필요합니다.");
+      navigate("/login");
+    } else {
+      navigate("/test");
+    }
+  };
+
   return (
     <>
       <Layout />
@@ -42,9 +54,9 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <Link to="/test">
-          <button className="button-blue">내 성격 알아보러 가기</button>
-        </Link>
+        <button className="button-blue" onClick={handleClick}>
+          내 성격 알아보러 가기
+        </button>
       </div>
     </>
   );
