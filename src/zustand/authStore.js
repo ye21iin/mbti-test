@@ -1,9 +1,7 @@
 import { create } from "zustand";
 
-const token = localStorage.getItem("token");
-
 const useAuthStore = create((set) => ({
-  isAuthenticated: !!token,
+  isAuthenticated: false,
 
   onLogin: (token) => {
     localStorage.setItem("accessToken", token); // 로그인 시 token 저장

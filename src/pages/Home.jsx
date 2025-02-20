@@ -1,18 +1,16 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
+import useAuthStore from "../zustand/authStore";
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
+  // 로컬스토리지에 토큰 정보가 있으면 로그인 상태 설정
+  useEffect(() => {
     const token = localStorage.getItem("accessToken");
-    if (!token) {
-      alert("로그인이 필요합니다.");
-      navigate("/login");
-    } else {
-      navigate("/test");
+    if (token) {
+      useAuthStore.getState().onLogin(token);
     }
-  };
+  }, []);
 
   return (
     <>
@@ -54,9 +52,9 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <button className="button-blue" onClick={handleClick}>
-          내 성격 알아보러 가기
-        </button>
+        <Link to="/test">
+          <button className="button-blue">내 성격 알아보러 가기</button>
+        </Link>
       </div>
     </>
   );
