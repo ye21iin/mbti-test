@@ -30,13 +30,11 @@ const Home = () => {
         </div>
       </div>
       <Link to="/test">
-        <button className="mt-4 bg-blue-500 shadow-lg shadow-blue-500/50 text-white hover:bg-blue-600 py-4 px-8 rounded">
-          내 성격 알아보러 가기
-        </button>
+        <button className="button-blue">내 성격 알아보러 가기</button>
       </Link>
       <Link to="/login">
         <button className="mt-4 bg-gray-500 shadow-lg shadow-gray-500/50 text-white hover:bg-gray-400 py-3 px-7 rounded">
-          로그인하기
+          로그인
         </button>
       </Link>
     </div>

@@ -57,10 +57,7 @@ const AuthForm = ({ mode, onSubmit }) => {
           className="w-full p-4 border border-gray-300 rounded-lg"
         />
       )}
-      <button
-        type="submit"
-        className="mt-4 bg-blue-500 shadow-lg shadow-blue-500/50 text-white hover:bg-blue-600 py-3 px-7 rounded"
-      >
+      <button type="submit" className="button-blue">
         {mode === "login" ? "로그인" : "회원가입"}
       </button>
     </form>
