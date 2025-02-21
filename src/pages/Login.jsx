@@ -6,11 +6,12 @@ import useAuthStore from "../zustand/authStore";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { onLogin } = useAuthStore((state) => state);
+  const { onLogin, checkTokenExpiration } = useAuthStore((state) => state);
   const handleLogin = async (formData) => {
     try {
       const { accessToken } = await login(formData);
       onLogin(accessToken);
+      checkTokenExpiration();
       navigate("/");
     } catch (error) {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");

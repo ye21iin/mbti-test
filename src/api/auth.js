@@ -7,7 +7,7 @@ export const register = async (userData) => {
   return response.data;
 };
 
-const EXP_TM = "10m";
+const EXP_TM = "5m";
 export const login = async (userData) => {
   const response = await axios.post(
     `${API_URL}/login?expiresIn=${EXP_TM}`,
