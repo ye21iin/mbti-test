@@ -26,7 +26,8 @@ export const login = async (userData) => {
 
 export const getUserProfile = async (token, id) => {
   try {
-    const response = await axios.get(`${API_URL}/user?user_id=${id}`, {
+    const url = id ? `${API_URL}/user?user_id=${id}` : `${API_URL}/user`;
+    const response = await axios.get(url, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
