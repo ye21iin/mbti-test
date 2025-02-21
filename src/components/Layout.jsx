@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import ProfileModal from "./ProfileModal";
 import useAuthStore from "../zustand/authStore";
 import { getRemainingTime } from "../utils/decodingToken";
@@ -46,6 +46,7 @@ const Layout = () => {
           )}
         </div>
       </div>
+      <Outlet />
     </>
   );
 };
