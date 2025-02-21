@@ -11,7 +11,7 @@ export const register = async (userData) => {
   }
 };
 
-const EXP_TM = "5m";
+const EXP_TM = "20m";
 export const login = async (userData) => {
   try {
     const response = await axios.post(
