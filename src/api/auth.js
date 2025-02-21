@@ -8,7 +8,7 @@ export const register = (userData) =>
     .then((res) => res.data)
     .catch(console.error);
 
-const EXP_TM = "20m";
+const EXP_TM = "90m";
 export const login = (userData) =>
   axios
     .post(`${API_URL}/login?expiresIn=${EXP_TM}`, userData)

@@ -36,7 +36,7 @@ const Layout = () => {
           )}
           {isAuthenticated && <ProfileModal />}
           {isAuthenticated ? (
-            <button className="button-sky" onClick={onLogout}>
+            <button className="button-slate" onClick={onLogout}>
               로그아웃
             </button>
           ) : (
