@@ -7,17 +7,21 @@ import { formatTime } from "../utils/formatTime";
 
 const Layout = () => {
   const { isAuthenticated, onLogout } = useAuthStore((state) => state);
-  const [remainingTime, setRemainingTime] = useState(getRemainingTime());
+  // lazy initial state: 초기 렌더링 시점에만 값 계산
+  const [remainingTime, setRemainingTime] = useState(() => getRemainingTime());
 
   useEffect(() => {
     if (!isAuthenticated) return;
-    const updateRemainingTime = () => {
-      setRemainingTime(getRemainingTime());
+    setRemainingTime(getRemainingTime()); // 초기값 보정
+    const interval = setInterval(() => {
+      setRemainingTime((prev) => {
+        const newTime = getRemainingTime();
+        return prev !== newTime ? newTime : prev; // 불필요한 렌더링 방지
+      });
+    }, 1000);
+    return () => {
+      clearInterval(interval);
     };
-    updateRemainingTime();
-    const interval = setInterval(updateRemainingTime, 1000);
-
-    return () => clearInterval(interval);
   }, [isAuthenticated]);
 
   return (
