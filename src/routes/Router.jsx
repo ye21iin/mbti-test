@@ -5,6 +5,7 @@ import Test from "../pages/Test";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import useAuthStore from "../zustand/authStore";
+import Layout from "../components/Layout";
 
 const Router = () => {
   const { isAuthenticated } = useAuthStore((state) => state);
@@ -24,11 +25,13 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/test" element={<PrivateRoute element={Test} />} />
+          <Route path="/results" element={<PrivateRoute element={Results} />} />
+        </Route>
         <Route path="/signup" element={<PublicRoute element={Signup} />} />
         <Route path="/login" element={<PublicRoute element={Login} />} />
-        <Route path="/test" element={<PrivateRoute element={Test} />} />
-        <Route path="/results" element={<PrivateRoute element={Results} />} />
       </Routes>
     </BrowserRouter>
   );
