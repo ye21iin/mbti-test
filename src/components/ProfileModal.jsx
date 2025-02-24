@@ -1,28 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
-import { getUserProfile, updateProfile } from "../api/auth";
+import { updateProfile } from "../api/auth";
 import useAuthStore from "../zustand/authStore";
+import useNickname from "../hooks/useNickname";
 
 const ProfileModal = () => {
   const { token } = useAuthStore();
+  const { nickname, refreshNickname } = useNickname();
   const [showModal, setShowModal] = useState(false);
-  const [nickname, setNickname] = useState("");
   const [newNickname, setNewNickName] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-
-  useEffect(() => {
-    if (showModal) {
-      setSuccessMessage("");
-      getUserProfile(token)
-        .then((data) => {
-          setNickname(data.nickname);
-          setNewNickName(data.nickname);
-        })
-        .catch((error) => {
-          console.error("프로필 불러오기 실패:", error);
-        });
-    }
-  }, [showModal, token]);
 
   const handleChangeNickname = async () => {
     if (!newNickname.trim()) {
@@ -32,8 +19,8 @@ const ProfileModal = () => {
 
     try {
       await updateProfile(token, { nickname: newNickname });
-      setNickname(newNickname); // UI 업데이트
       setSuccessMessage("닉네임 수정 완료");
+      refreshNickname(); // 닉네임 데이터 최신화
     } catch (error) {
       alert("닉네임 변경 중 오류가 발생했습니다.");
       throw new Error(error);
@@ -47,7 +34,13 @@ const ProfileModal = () => {
       </button>
       {showModal &&
         createPortal(
-          <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div
+            className="modal-overlay"
+            onClick={() => {
+              setShowModal(false);
+              setSuccessMessage("");
+            }}
+          >
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <h2 className="h2">닉네임 수정</h2>
               <div>
@@ -75,14 +68,17 @@ const ProfileModal = () => {
                 </button>
                 <button
                   className="button-slate mt-5"
-                  onClick={() => setShowModal(false)}
+                  onClick={() => {
+                    setShowModal(false);
+                    setSuccessMessage("");
+                  }}
                 >
                   닫기
                 </button>
               </div>
             </div>
           </div>,
-          document.body
+          document.body // portal
         )}
     </>
   );
