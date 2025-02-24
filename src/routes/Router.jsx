@@ -69,7 +69,6 @@ const Router = () => {
         <Route path="/signup" element={<PublicRoute element={Signup} />} />
         <Route path="/login" element={<PublicRoute element={Login} />} />
       </Routes>
-      ø
     </BrowserRouter>
   );
 };
