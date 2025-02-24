@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      {/* <Layout /> */}
       <div className="centered-container">
         <h1 className="h1">
           무료&nbsp;
