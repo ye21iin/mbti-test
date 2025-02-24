@@ -2,21 +2,25 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_AUTH_BASE_URL;
 
+const authApi = axios.create({
+  baseURL: API_URL,
+});
+
 export const register = (userData) =>
-  axios
+  authApi
     .post(`${API_URL}/register`, userData)
     .then((res) => res.data)
     .catch(console.error);
 
-const EXP_TM = "90m";
+const EXP_TM = "45m";
 export const login = (userData) =>
-  axios
+  authApi
     .post(`${API_URL}/login?expiresIn=${EXP_TM}`, userData)
     .then((res) => res.data)
     .catch(console.error);
 
 export const getUserProfile = (token, id) =>
-  axios
+  authApi
     .get(id ? `${API_URL}/user?user_id=${id}` : `${API_URL}/user`, {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -24,7 +28,7 @@ export const getUserProfile = (token, id) =>
     .catch(console.error);
 
 export const updateProfile = (token, formData) =>
-  axios
+  authApi
     .patch(`${API_URL}/profile`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
