@@ -18,10 +18,10 @@ export const createTestResult = (resultData) =>
 
 export const deleteTestResult = (id) =>
   axios
-    .delete(`JSON_TEST_RESULT_URL/${id}`)
+    .delete(`${JSON_TEST_RESULT_URL}/${id}`)
     .catch((error) => console.error(error));
 
 export const updateTestResultVisibility = (id, visibility) =>
   axios
-    .patch(`JSON_TEST_RESULT_URL/${id}`, { visibility })
+    .patch(`${JSON_TEST_RESULT_URL}/${id}`, visibility)
     .catch((error) => console.error(error));

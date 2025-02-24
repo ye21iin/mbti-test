@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { updateProfile } from "../api/auth";
-import useNickname from "../hooks/useNickname";
+import useMyNickname from "../hooks/useMyNickname";
 import useAuthStore from "../zustand/authStore";
 
 const EditNickname = ({ showModal: setShowModal }) => {
   const { token } = useAuthStore();
-  const { nickname, refreshNickname } = useNickname();
+  const { nickname, refreshNickname } = useMyNickname();
   const [newNickname, setNewNickName] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 

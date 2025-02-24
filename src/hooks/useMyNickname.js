@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getUserProfile } from "../api/auth";
 import useAuthStore from "../zustand/authStore";
 
-const useNickname = () => {
+const useMyNickname = () => {
   const { token } = useAuthStore();
   const [nickname, setNickname] = useState("");
 
@@ -22,4 +22,4 @@ const useNickname = () => {
   return { nickname, refreshNickname };
 };
 
-export default useNickname;
+export default useMyNickname;

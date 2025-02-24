@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TestForm from "../components/TestForm";
 import { calculateMBTI } from "../utils/mbtiCalculator";
 
 import { useNavigate } from "react-router-dom";
 import { mbtiDescriptions } from "../data/mbtiDescriptions";
-import { createTestResult, getTestResults } from "../api/testResults";
+import { createTestResult } from "../api/testResults";
 import { getUserProfile } from "../api/auth";
 
 const Test = () => {
@@ -22,9 +22,9 @@ const Test = () => {
         userId,
         mbtiResult,
         timestamp: new Date().toLocaleString(),
+        visibility: false,
       };
       await createTestResult(resultData);
-      alert("제출되었습니다!");
       setResult(mbtiResult);
     } catch (error) {
       throw new Error(error);
