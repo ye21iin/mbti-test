@@ -12,6 +12,7 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import useAuthStore from "../zustand/authStore";
 import Layout from "../components/Layout";
+import { useEffect, useState } from "react";
 
 const PublicRoute = () => {
   const { isAuthenticated } = useAuthStore();
@@ -24,6 +25,20 @@ const PrivateRoute = () => {
 };
 
 const Router = () => {
+  const initializeAuthState = useAuthStore(
+    (state) => state.initializeAuthState
+  );
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    initializeAuthState();
+    setIsInitialized(true);
+  }, [initializeAuthState]);
+
+  if (!isInitialized) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <BrowserRouter>
       <Routes>

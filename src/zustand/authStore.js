@@ -48,8 +48,8 @@ import { create } from "zustand";
 import { getRemainingTime, isTokenValid } from "../utils/decodingToken";
 
 const useAuthStore = create((set, get) => ({
-  isAuthenticated: false, // 초기값은 false
-  token: null, // 초기값은 null
+  isAuthenticated: !!localStorage.getItem("token"),
+  token: localStorage.getItem("token") || null,
   timerId: null,
 
   // 초기화 함수: 페이지 로드 시 토큰 유효성 검사
