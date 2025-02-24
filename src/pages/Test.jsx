@@ -1,11 +1,10 @@
 import { useState } from "react";
-import TestForm from "../components/TestForm";
 import { calculateMBTI } from "../utils/mbtiCalculator";
-
 import { useNavigate } from "react-router-dom";
 import { mbtiDescriptions } from "../data/mbtiDescriptions";
 import { createTestResult } from "../api/testResults";
 import { getUserProfile } from "../api/auth";
+import TestForm from "../components/TestForm";
 
 const Test = () => {
   const navigate = useNavigate();
@@ -35,6 +34,18 @@ const Test = () => {
     navigate("/results");
   };
 
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "🤾🏻MBTI 테스트 결과🧘🏻",
+          text: `나의 MBTI 결과는 ${result}입니다!🐥`,
+          url: window.location.href,
+        })
+        .catch((err) => console.error(err));
+    }
+  };
+
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white">
       <div className="bg-white rounded-lg p-8 max-w-lg w-full h-full overflow-y-auto">
@@ -50,12 +61,20 @@ const Test = () => {
               {mbtiDescriptions[result] ||
                 "해당 성격 유형에 대한 설명이 없습니다."}
             </p>
-            <button
-              onClick={handleNavigateToResults}
-              className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300 hover:text-[#FF5A5F]"
-            >
-              결과 페이지로 이동하기
-            </button>
+            <div className="grid gap-2">
+              <button
+                onClick={handleShare}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 hover:text-[#93a5c9]"
+              >
+                공유하기
+              </button>
+              <button
+                onClick={handleNavigateToResults}
+                className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300 hover:text-[#FF5A5F]"
+              >
+                결과 페이지로 이동하기
+              </button>
+            </div>
           </>
         )}
       </div>
