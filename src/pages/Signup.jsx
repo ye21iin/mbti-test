@@ -8,9 +8,9 @@ const Signup = () => {
 
   const handleSignup = async (formData) => {
     try {
-      console.log("📤 회원가입 요청 데이터:", formData);
+      // console.log("📤 회원가입 요청 데이터:", formData);
       const response = await register(formData); // 인증 서버 회원가입 요청
-      console.log("✅ 인증 서버 응답:", response);
+      // console.log("✅ 인증 서버 응답:", response);
       response.success && (await addUserToJsonServer({ id: formData.id })); // JSON Server에 유저 ID 저장
       navigate("/login");
     } catch (error) {

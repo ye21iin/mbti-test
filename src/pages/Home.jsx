@@ -4,14 +4,24 @@ import Layout from "../components/Layout";
 import useAuthStore from "../zustand/authStore";
 
 const Home = () => {
-  // 로컬스토리지에 토큰 정보가 있으면 로그인 상태 설정
-  useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    if (token) {
-      useAuthStore.getState().onLogin(token);
-    }
-  }, []);
+  // // 로컬스토리지에 토큰 정보가 있으면 로그인 상태 설정
+  // useEffect(() => {
+  //   const token = localStorage.getItem("accessToken");
+  //   if (token) {
+  //     useAuthStore.getState().onLogin(token);
+  //   }
+  // }, []);
 
+  const initializeAuthState = useAuthStore(
+    (state) => state.initializeAuthState
+  );
+
+  // 앱 로드 시 Zustand 상태 초기화
+  useEffect(() => {
+    initializeAuthState();
+  }, [initializeAuthState]);
+
+  // console.log(useAuthStore((state) => state.isAuthenticated));
   return (
     <>
       {/* <Layout /> */}
