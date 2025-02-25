@@ -20,16 +20,19 @@ JWT 인증, REST API 통신, Axios와 TanStack Query를 활용하여 **인증**�
 ### 🛠️ 기술 스택
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Zustand](https://img.shields.io/badge/Zustand-FF5A5F?style=flat-square&logo=zustand&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
+
 ![React Router](https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=react-router&logoColor=white)
+![Zustand](https://img.shields.io/badge/zustand-orange?style=flat-square&logo=zustand&logoColor=white)
+![TanStack Query](https://img.shields.io/badge/TanstackQuery-FF4154?style=flat-square&logo=TanstackQuery&logoColor=white)
+
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
+
 ![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
-![React Portal](https://img.shields.io/badge/ReactPortal-61DAFB?style=flat-square&logo=react&logoColor=black)
-![React Icons](https://img.shields.io/badge/ReactIcons-61DAFB?style=flat-square&logo=react&logoColor=black)
-![TanStack Query](https://img.shields.io/badge/TanStackQuery-FF5A00?style=flat-square&logo=tanstack&logoColor=white)
+![React Portal](https://img.shields.io/badge/ReactPortal-61DAFB?style=flat-square&logo=react&logoColor=white)
+![React Icons](https://img.shields.io/badge/ReactIcons-61DAFB?style=flat-square&logo=react&logoColor=white)
 
 ### 🌠 미리보기
 
