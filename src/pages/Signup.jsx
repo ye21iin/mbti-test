@@ -1,6 +1,5 @@
 import { register } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
-// import { addUserToJsonServer } from "../api/users";
 import { useState } from "react";
 import AuthForm from "../components/AuthForm";
 import Toast from "../components/Toast";

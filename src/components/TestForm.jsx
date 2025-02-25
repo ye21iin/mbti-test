@@ -8,7 +8,6 @@ const TestForm = ({ onSubmit }) => {
   const [allAnswered, setAllAnswered] = useState(false);
 
   useEffect(() => {
-    // 모든 질문에 대한 답변이 선택되었는지 확인
     const isAllAnswered = answers.every(
       (answer) => answer.answer !== "" && answer.type !== ""
     );
@@ -55,7 +54,6 @@ const TestForm = ({ onSubmit }) => {
       ))}
       <button
         type="submit"
-        // className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
         className={`w-full py-3 rounded-lg font-semibold transition duration-300 ${
           allAnswered
             ? "bg-primary text-white hover:bg-red-700"

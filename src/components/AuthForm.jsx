@@ -7,11 +7,6 @@ const AuthForm = ({ mode, onSubmit }) => {
     nickname: "",
   });
 
-  //   const handleChange = (e) => {
-  //     const newUser = {};
-  //     setFormData();
-  //   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);

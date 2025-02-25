@@ -8,5 +8,5 @@ export const authApi = axios.create({
 });
 
 export const testApi = axios.create({
-  baseURL: JSON_TEST_RESULT_URL,
+  baseURL: JSON_URL,
 });

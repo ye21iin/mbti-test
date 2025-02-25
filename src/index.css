@@ -36,12 +36,24 @@
   @apply rounded-full bg-sky-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700;
 }
 
+.button-custom-blue {
+  @apply w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 hover:text-[#93a5c9];
+}
+
+.button-custom-red {
+  @apply w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300 hover:text-[#FF5A5F];
+}
+
 .modal-overlay {
   @apply fixed top-0 left-0 right-0 bottom-0 bg-black/50 flex justify-center items-center z-50;
 }
 
 .modal-content {
   @apply bg-white p-6 rounded-lg shadow-md w-[450px] max-w-[600px] text-center;
+}
+
+.blk-boxing {
+  @apply absolute -inset-1 block -skew-y-3 bg-slate-800;
 }
 
 /* reset CSS */

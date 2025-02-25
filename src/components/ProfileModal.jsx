@@ -16,7 +16,6 @@ const ProfileModal = () => {
             className="modal-overlay"
             onClick={() => {
               setShowModal(false);
-              // setSuccessMessage("");
             }}
           >
             <EditNickname showModal={setShowModal} />
