@@ -7,10 +7,7 @@ const Home = () => {
         <h1 className="h1">
           무료&nbsp;
           <span className="relative">
-            <span
-              className="absolute -inset-1 block -skew-y-3 bg-slate-800"
-              aria-hidden="true"
-            ></span>
+            <span className="blk-boxing" aria-hidden="true"></span>
             <span className="relative text-white">성격</span>
           </span>
           &nbsp;테스트

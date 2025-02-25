@@ -62,15 +62,12 @@ const Test = () => {
                 "해당 성격 유형에 대한 설명이 없습니다."}
             </p>
             <div className="grid gap-2">
-              <button
-                onClick={handleShare}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 hover:text-[#93a5c9]"
-              >
+              <button onClick={handleShare} className="button-custom-blue">
                 공유하기
               </button>
               <button
                 onClick={handleNavigateToResults}
-                className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300 hover:text-[#FF5A5F]"
+                className="button-custom-red"
               >
                 결과 페이지로 이동하기
               </button>

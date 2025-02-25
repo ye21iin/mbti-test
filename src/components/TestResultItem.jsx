@@ -59,19 +59,15 @@ const TestResultItem = ({ result }) => {
           ? mbtiDescriptions[result.mbtiResult].substr(6)
           : "설명이 없습니다."}
       </p>
-
       {result.userId === id && (
         <div className="flex justify-end gap-1">
           <button
-            className="w-32 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition duration-300"
+            className="button-custom-blue"
             onClick={handleVisibilityToggle}
           >
             {result.visibility ? "비공개로 전환" : "공개로 전환"}
           </button>
-          <button
-            className="w-16 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300 hover:text-[#aeaeae]"
-            onClick={handleDelete}
-          >
+          <button className="button-custom-red" onClick={handleDelete}>
             삭제
           </button>
         </div>
