@@ -1,6 +1,6 @@
 import { register } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { addUserToJsonServer } from "../api/users";
+// import { addUserToJsonServer } from "../api/users";
 import { useState } from "react";
 import AuthForm from "../components/AuthForm";
 import Toast from "../components/Toast";
@@ -12,8 +12,7 @@ const Signup = () => {
   const handleSignup = async (formData) => {
     try {
       const response = await register(formData); // 인증 서버 회원가입 요청
-      response.success && (await addUserToJsonServer({ id: formData.id })); // JSON Server에 유저 ID 저장
-      navigate("/login");
+      response.success && navigate("/login");
     } catch (error) {
       setShowToast(true);
       throw new Error(error);
