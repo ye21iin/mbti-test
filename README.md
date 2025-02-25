@@ -21,9 +21,10 @@ JWT 인증, REST API 통신, Axios와 TanStack Query를 활용하여 **인증**�
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![React Router](https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=react-router&logoColor=white)
+
 ![Zustand](https://img.shields.io/badge/zustand-orange?style=flat-square&logo=zustand&logoColor=white)
 ![TanStack Query](https://img.shields.io/badge/TanstackQuery-FF4154?style=flat-square&logo=TanstackQuery&logoColor=white)
 
@@ -31,8 +32,8 @@ JWT 인증, REST API 통신, Axios와 TanStack Query를 활용하여 **인증**�
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
 
 ![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
-![React Portal](https://img.shields.io/badge/ReactPortal-61DAFB?style=flat-square&logo=react&logoColor=white)
-![React Icons](https://img.shields.io/badge/ReactIcons-61DAFB?style=flat-square&logo=react&logoColor=white)
+![React Portal](https://img.shields.io/badge/ReactPortal-000000?style=flat-square&logo=react&logoColor=white)
+![React Icons](https://img.shields.io/badge/ReactIcons-000000?style=flat-square&logo=react&logoColor=white)
 
 ### 🌠 미리보기
 
