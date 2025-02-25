@@ -40,7 +40,7 @@ const TestResultItem = ({ result }) => {
   });
 
   const handleVisibilityToggle = () => {
-    toggleVisibility(result.id, { visibility: !result.visibility });
+    toggleVisibility({ id: result.id, visibility: !result.visibility });
   };
 
   const handleDelete = () => {

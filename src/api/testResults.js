@@ -25,7 +25,7 @@ export const deleteTestResult = (id) =>
     .delete(`${JSON_TEST_RESULT_URL}/${id}`)
     .catch((error) => console.error(error));
 
-export const updateTestResultVisibility = (id, visibility) =>
+export const updateTestResultVisibility = ({ id, visibility }) =>
   testApi
-    .patch(`${JSON_TEST_RESULT_URL}/${id}`, visibility)
+    .patch(`${JSON_TEST_RESULT_URL}/${id}`, { visibility })
     .catch((error) => console.error(error));
