@@ -8,8 +8,7 @@ import { MdOutlineTimer } from "react-icons/md";
 
 const Layout = () => {
   const { isAuthenticated, onLogout } = useAuthStore((state) => state);
-  // lazy initial state: 초기 렌더링 시점에만 값 계산
-  const [remainingTime, setRemainingTime] = useState(() => getRemainingTime());
+  const [remainingTime, setRemainingTime] = useState(() => getRemainingTime()); // lazy initial state: 초기 렌더링 시점에만 값 계산
 
   useEffect(() => {
     if (!isAuthenticated) return;
