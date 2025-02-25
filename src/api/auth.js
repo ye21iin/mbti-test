@@ -1,27 +1,21 @@
-import axios from "axios";
-
-const API_URL = import.meta.env.VITE_AUTH_BASE_URL;
-
-const authApi = axios.create({
-  baseURL: API_URL,
-});
+import { authApi } from "./configInstance";
 
 export const register = (userData) =>
   authApi
-    .post(`${API_URL}/register`, userData)
+    .post(`/register`, userData)
     .then((res) => res.data)
     .catch(console.error);
 
 const EXP_TM = "45m";
 export const login = (userData) =>
   authApi
-    .post(`${API_URL}/login?expiresIn=${EXP_TM}`, userData)
+    .post(`/login?expiresIn=${EXP_TM}`, userData)
     .then((res) => res.data)
     .catch(console.error);
 
 export const getUserProfile = (token, id) =>
   authApi
-    .get(id ? `${API_URL}/user?user_id=${id}` : `${API_URL}/user`, {
+    .get(id ? `/user?user_id=${id}` : `/user`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => res.data)
@@ -29,7 +23,7 @@ export const getUserProfile = (token, id) =>
 
 export const updateProfile = (token, formData) =>
   authApi
-    .patch(`${API_URL}/profile`, formData, {
+    .patch(`/profile`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${token}`,

@@ -1,31 +1,21 @@
-import axios from "axios";
-
-const JSON_TEST_RESULT_URL = `${
-  import.meta.env.VITE_JSON_BASE_URL
-}/testResults`;
-
-const testApi = axios.create({
-  baseURL: JSON_TEST_RESULT_URL,
-});
+import { testApi } from "./configInstance";
 
 export const getTestResults = () =>
   testApi
-    .get(JSON_TEST_RESULT_URL)
+    .get()
     .then((res) => res.data)
     .catch((error) => console.error(error));
 
 export const createTestResult = (resultData) =>
   testApi
-    .post(JSON_TEST_RESULT_URL, resultData)
+    .post(resultData)
     .then((res) => res.data)
     .catch((error) => console.error(error));
 
 export const deleteTestResult = (id) =>
-  testApi
-    .delete(`${JSON_TEST_RESULT_URL}/${id}`)
-    .catch((error) => console.error(error));
+  testApi.delete(`/${id}`).catch((error) => console.error(error));
 
 export const updateTestResultVisibility = ({ id, visibility }) =>
   testApi
-    .patch(`${JSON_TEST_RESULT_URL}/${id}`, { visibility })
+    .patch(`/${id}`, { visibility })
     .catch((error) => console.error(error));
