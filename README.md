@@ -1,4 +1,4 @@
-# MBTI 성격 유형 테스트
+# MBTI 성격 유형 테스트 🌱
 
 **MBTI TEST**는 사용자가 로그인하여 성격 유형 검사를 진행하고, 결과를 저장 및 관리할 수 있는 웹 애플리케이션입니다.
 JWT 인증, REST API 통신, Axios와 TanStack Query를 활용하여 **인증**과 **비동기** 데이터 관리를 구현한 개인 프로젝트입니다.
@@ -35,18 +35,18 @@ JWT 인증, REST API 통신, Axios와 TanStack Query를 활용하여 **인증**�
 ![React Portal](https://img.shields.io/badge/ReactPortal-000000?style=flat-square&logo=react&logoColor=white)
 ![React Icons](https://img.shields.io/badge/ReactIcons-000000?style=flat-square&logo=react&logoColor=white)
 
-### 🌠 미리보기
+## 🌠 미리보기
 
 ![2025-02-2512 13 49-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8f16b4d8-6f7e-4d6f-95a5-0b44c115802a)
 
-### 🌧️ 개발 기록: TROUBLE-SHOOTING
+## 🌧️ 개발 기록: TROUBLE-SHOOTING
 
 <h4>0️⃣ [React/MBTI] react-dom Portal로 모달 만들기 👉🏻 <a href="https://velog.io/@ye21iin/%ED%8F%AC%ED%83%88">링크</a></h4>
 <h4>1️⃣ [React/MBTI] POST서버통신 오류: ERR_NAME_NOT_RESOLVED  👉🏻 <a href="https://velog.io/@ye21iin/ReactMBTI-POST%EC%84%9C%EB%B2%84%ED%86%B5%EC%8B%A0-%EC%98%A4%EB%A5%98-ERRNAMENOTRESOLVED">링크</a></h4>
 <h4>2️⃣ [React/MBTI] JSON Server 500 에러 발생: 원인 분석 및 해결 방법  👉🏻 <a href="https://velog.io/@ye21iin/ReactMBTI-JSON-Server-500-%EC%97%90%EB%9F%AC-%EB%B0%9C%EC%83%9D-%EC%9B%90%EC%9D%B8-%EB%B6%84%EC%84%9D-%EB%B0%8F-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95">링크</a></h4>
 <h4>3️⃣ [React/MBTI] TypeError: relativeURL.replace is not a function  👉🏻 <a href="https://velog.io/@ye21iin/ReactMBTI-TypeError-relativeURL.replace-is-not-a-function">링크</a></h4>
 
-### ☑️ 프로젝트 트리
+## ☑️ 프로젝트 트리
 
 ```
 mbti-test
