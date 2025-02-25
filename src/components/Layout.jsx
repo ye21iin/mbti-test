@@ -4,6 +4,7 @@ import useAuthStore from "../zustand/authStore";
 import { getRemainingTime } from "../utils/decodingToken";
 import { useEffect, useState } from "react";
 import { formatTime } from "../utils/formatTime";
+import { MdOutlineTimer } from "react-icons/md";
 
 const Layout = () => {
   const { isAuthenticated, onLogout } = useAuthStore((state) => state);
@@ -26,13 +27,15 @@ const Layout = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center p-3 pl-10 h-15 bg-slate-100 shadow-md text-xl font-semibold">
+      <div className="flex justify-between items-center p-3 pl-5 h-15 bg-slate-100 shadow-md text-xl font-semibold">
         <Link to="/">
           <button className="button-rounded">홈</button>
         </Link>
         <div className="flex gap-2">
           {isAuthenticated && (
-            <p className="p-1">남은 시간: {formatTime(remainingTime)}</p>
+            <p className=" pt-2 text-sm ml-1 mr-1 inline-flex gap-1">
+              <MdOutlineTimer size={20} /> {formatTime(remainingTime)}
+            </p>
           )}
           {isAuthenticated && <ProfileModal />}
           {isAuthenticated ? (

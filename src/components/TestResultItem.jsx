@@ -48,13 +48,13 @@ const TestResultItem = ({ result }) => {
   };
 
   return (
-    <div className="bg-blue-50 rounded-lg p-8 max-w-lg w-full h-full overflow-y-auto gap">
+    <div className="bg-blue-50 rounded-lg p-8 max-w-lg text-center w-[90%] h-full overflow-y-auto gap">
       <div className="flex justify-between">
         <h2 className="h2">{isNicknameLoading ? "Loading..." : nickname}</h2>
         <span>{result.timestamp}</span>
       </div>
-      <p className="h2 font-semibold">{result.mbtiResult}</p>
-      <p className="mb-5">
+      <p className="h2 font-bold">{result.mbtiResult}</p>
+      <p className="mb-5 leading-6 first-line:text-xl">
         {mbtiDescriptions[result.mbtiResult]
           ? mbtiDescriptions[result.mbtiResult].substr(6)
           : "설명이 없습니다."}

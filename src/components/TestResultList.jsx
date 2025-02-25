@@ -16,7 +16,7 @@ const TestResultList = () => {
   if (isResultsError) return <div>Error occurred...</div>;
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 max-w-[90%] sm:max-w-sm md:max-w-x flex flex-col items-center mb-5">
       {testResults.map((result) => {
         return <TestResultItem key={result.id} result={result} />;
       })}
